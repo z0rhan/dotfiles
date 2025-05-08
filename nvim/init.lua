@@ -21,6 +21,12 @@ vim.opt.hlsearch= false
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>v", vim.cmd.Ex)
 vim.keymap.set('v', '<Leader>y', '"+y', { noremap = true, silent = true })
+-- Go to definition
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
+vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'Go to declaration' })
+-- Remap Ctrl+\ Ctrl+n to Ctrl+[ in terminal mode
+-- Use tnoremap to map Ctrl+\ Ctrl+n to Ctrl+[ in terminal mode
+vim.cmd([[ tnoremap <Esc> <C-\><C-n>]])
 
 require("config.lazy")
 
