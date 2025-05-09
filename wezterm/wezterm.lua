@@ -4,7 +4,7 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 -- Set font and font size
-config.font = wezterm.font("Fira Code")
+config.font = wezterm.font("JetBrains Mono")
 config.font_size = 12.0
 
 -- Set window transparency
@@ -16,6 +16,8 @@ config.colors = {
   background = "#090909", -- default dark grayish background
 }
 
+-- Wayland disable
+config.enable_wayland = false
 
 -- Optional: hide title bar decorations
 config.window_decorations = "RESIZE"

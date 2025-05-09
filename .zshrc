@@ -3,7 +3,7 @@
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="/opt/Qt/6.9.0/gcc_64/bin/:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Starship
 #eval "$(starship init zsh)"
@@ -20,7 +20,6 @@ alias la='ls -a'
 alias vi='nvim'
 alias neof='file=$(fzf --preview "bat --color=always --line-range :50 {}") && [ -n "$file" ] && nvim "$file"'
 alias cdd='cd "$(find . -type d | fzf)"'
-alias wezterm='flatpak run org.wezfurlong.wezterm'
 alias ff='fastfetch'
 
 #autojump
@@ -130,3 +129,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export BAT_THEME="gruvbox-dark"
+
+source /usr/share/nvm/init-nvm.sh
+

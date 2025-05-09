@@ -31,10 +31,10 @@ return {
                 init_options = {
                     fallbackFlags = {
                         "-std=c++17",
-                        "-I/opt/Qt/6.9.0/gcc_64/include",
-                        "-I/opt/Qt/6.9.0/gcc_64/include/QtCore",
-                        "-I/opt/Qt/6.9.0/gcc_64/include/QtWidgets",
-                        "-I/opt/Qt/6.9.0/gcc_64/include/QtGui",
+                        "-I/usr/include/qt6",
+                        "-I/usr/include/qt6/QtCore",
+                        "-I/usr/include/qt6/QtWidgets",
+                        "-I/usr/include/qt6/QtGui",
                     },
                 },
             })
