@@ -4,6 +4,8 @@
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.config/emacs/bin:$PATH"
+export PATH="$HOME/Personal/dotfiles/scripts:$PATH"
 
 # Starship
 #eval "$(starship init zsh)"
@@ -22,6 +24,7 @@ alias neof='file=$(fzf --preview "bat --color=always --line-range :50 {}") && [ 
 alias cdd='cd "$(find . -type d | fzf)"'
 alias ff='fastfetch'
 alias nt='nvim +"term"'
+alias cppformat='~/.local/share/nvim/mason/bin/clang-format -style="{BasedOnStyle: LLVM, BreakBeforeBraces: Allman}" -dump-config > .clang-format'
 
 #autojump
 #[[ -s /home/z0rhan/.autojump/etc/profile.d/autojump.sh ]] && source /home/z0rhan/.autojump/etc/profile.d/autojump.sh
@@ -127,4 +130,8 @@ source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highli
 
 export BAT_THEME="gruvbox-dark"
 
+
 [ -f "/home/z0rhan/.ghcup/env" ] && . "/home/z0rhan/.ghcup/env" # ghcup-env
+
+# zoxide
+eval "$(zoxide init zsh)"
