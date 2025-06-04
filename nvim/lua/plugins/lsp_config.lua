@@ -24,6 +24,13 @@ return {
             lspconfig.clangd.setup({ capabilities = capabilities })
             lspconfig.cmake.setup({ capabilities = capabilities })
             lspconfig.hls.setup({ capabilities = capabilities })
+            lspconfig.html.setup({
+                capabilities = capabilities,
+                filetypes = { "html", "htmldjango", "django-html" }
+            })
+            lspconfig.cssls.setup({ capabilities = capabilities })
+            lspconfig.ts_ls.setup({ capabilities = capabilities })
+            lspconfig.pylsp.setup({ capabilities = capabilities })
         end,
     },
 }
