@@ -31,6 +31,11 @@ return {
             lspconfig.cssls.setup({ capabilities = capabilities })
             lspconfig.ts_ls.setup({ capabilities = capabilities })
             lspconfig.pylsp.setup({ capabilities = capabilities })
+            lspconfig.glsl_analyzer.setup({
+                capabilities = capabilities,
+                filetypes = {"gdshader"},
+            })
+            lspconfig.sqlls.setup({ capabilities = capabilities })
         end,
     },
 }

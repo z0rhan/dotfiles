@@ -7,22 +7,11 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'morhetz/gruvbox'
 
 call plug#end()
 
-syntax on
-
-set termguicolors
+syntax off
 set background=dark
-colorscheme gruvbox
-
-highlight MatchParen cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
-hi NonText ctermbg=none
-hi Normal guibg=NONE ctermbg=NONE
-
-" In init.vim for terminal mappings
-tnoremap <C-\><C-n> <C-[>
 
 set guicursor&  " Reset to default cursor
 

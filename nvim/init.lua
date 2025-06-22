@@ -1,5 +1,6 @@
 print("Welcome Back, Piece of Shit!!!")
 
+-- For auto cmp
 vim.diagnostic.config({
   virtual_text = true,
   signs = true,
@@ -8,53 +9,57 @@ vim.diagnostic.config({
   severity_sort = true,
 })
 
-
+-- vim options
+vim.opt.termguicolors = true
 vim.opt.guicursor = ""
-
+vim.opt.scrolloff = 10
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.hlsearch= false
+-- Vertical mark
+vim.opt.colorcolumn = "80,100"
+-- Enable persistent undo
+vim.opt.undodir = vim.fn.expand('~/.config/nvim/undo')  -- Set undo directory
+vim.opt.undofile = true  -- Enable undo file support
 vim.cmd("set number")
 vim.cmd("set relativenumber")
-
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
+vim.cmd("syntax on")
 
-vim.opt.termguicolors = true
-
-vim.opt.scrolloff = 10
-
-vim.opt.autoindent = true
-vim.opt.smartindent = true
-vim.opt.hlsearch= false
-
+-- keymaps
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>v", vim.cmd.Ex)
 vim.keymap.set('v', '<Leader>y', '"+y', { noremap = true, silent = true })
 -- Go to definition
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'Go to declaration' })
-vim.keymap.set('n', 'gD', vim.lsp.buf.implementation, { desc = 'Go to implementation' })
-
+vim.keymap.set('n', 'GD', vim.lsp.buf.implementation, { desc = 'Go to implementation' })
 -- Remap Ctrl+\ Ctrl+n to Ctrl+[ in terminal mode
--- Use tnoremap to map Ctrl+\ Ctrl+n to Ctrl+[ in terminal mode
 vim.cmd([[ tnoremap <C-[> <C-\><C-n>]])
 
+-- for lazy
 require("config.lazy")
+-- colorscheme
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])
+-- disable highlighting from lsps
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    -- Disable semantic tokens
+    client.server_capabilities.semanticTokensProvider = nil
+  end,
+})
 
 -- For transparent background
 vim.cmd([[hi! Normal guibg=NONE ctermbg=NONE]])
 vim.cmd([[hi! NormalNC guibg=NONE ctermbg=NONE]])
 -- Add more highlighting groups as needed
 
--- Vertical mark
-vim.opt.colorcolumn = "80,100"
-
-
 -- Highlight for nvim-cmp
--- Enable persistent undo
-vim.opt.undodir = vim.fn.expand('~/.config/nvim/undo')  -- Set undo directory
-vim.opt.undofile = true  -- Enable undo file support
-
 -- Deprecated items (gray)
 vim.api.nvim_set_hl(0, 'CmpItemAbbrDeprecated', { bg='NONE', strikethrough=true, fg='#928374' }) -- Gruvbox gray
 
