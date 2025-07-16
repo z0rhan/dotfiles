@@ -3,12 +3,9 @@
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/Dev/dotfiles/scripts:$PATH"
+export PATH="$HOME/usr/lib/qt6/bin:$PATH"
 export PATH="$HOME/.config/emacs/bin:$PATH"
-export PATH="$HOME/Personal/dotfiles/scripts:$PATH"
-
-# Starship
-#eval "$(starship init zsh)"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -25,10 +22,7 @@ alias cdd='cd "$(find . -type d | fzf)"'
 alias ff='fastfetch'
 alias nt='nvim +"term"'
 alias cppformat='~/.local/share/nvim/mason/bin/clang-format -style="{BasedOnStyle: LLVM, BreakBeforeBraces: Allman}" -dump-config > .clang-format'
-
-#autojump
-#[[ -s /home/z0rhan/.autojump/etc/profile.d/autojump.sh ]] && source /home/z0rhan/.autojump/etc/profile.d/autojump.sh
-#autoload -U compinit && compinit -u
+alias e='emacs -nw'
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -90,12 +84,11 @@ alias cppformat='~/.local/share/nvim/mason/bin/clang-format -style="{BasedOnStyl
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions)
 
 # IMPORTANT FOR OH-MY-ZSH
 source $ZSH/oh-my-zsh.sh
 source $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
@@ -130,8 +123,7 @@ source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highli
 
 export BAT_THEME="gruvbox-dark"
 
-
-[ -f "/home/z0rhan/.ghcup/env" ] && . "/home/z0rhan/.ghcup/env" # ghcup-env
-
 # zoxide
 eval "$(zoxide init zsh)"
+
+[ -f "/home/z0rhan/.ghcup/env" ] && . "/home/z0rhan/.ghcup/env" # ghcup-env

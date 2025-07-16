@@ -16,11 +16,14 @@ vim.opt.scrolloff = 10
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.hlsearch= false
+
 -- Vertical mark
 vim.opt.colorcolumn = "80,100"
+
 -- Enable persistent undo
+vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand('~/.config/nvim/undo')  -- Set undo directory
-vim.opt.undofile = true  -- Enable undo file support
+
 vim.cmd("set number")
 vim.cmd("set relativenumber")
 vim.cmd("set expandtab")
