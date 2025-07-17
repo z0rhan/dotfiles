@@ -1,5 +1,3 @@
-print("Welcome Back, Piece of Shit!!!")
-
 -- For auto cmp
 vim.diagnostic.config({
   virtual_text = true,
@@ -17,13 +15,6 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.hlsearch= false
 
--- Vertical mark
-vim.opt.colorcolumn = "80,100"
-
--- Enable persistent undo
-vim.opt.undofile = true
-vim.opt.undodir = vim.fn.expand('~/.config/nvim/undo')  -- Set undo directory
-
 vim.cmd("set number")
 vim.cmd("set relativenumber")
 vim.cmd("set expandtab")
@@ -31,6 +22,13 @@ vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.cmd("syntax on")
+
+-- Vertical mark
+vim.opt.colorcolumn = "80,100"
+
+-- Enable persistent undo
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.expand('~/.config/nvim/undo')  -- Set undo directory
 
 -- keymaps
 vim.g.mapleader = " "
@@ -45,9 +43,11 @@ vim.cmd([[ tnoremap <C-[> <C-\><C-n>]])
 
 -- for lazy
 require("config.lazy")
+
 -- colorscheme
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
+
 -- disable highlighting from lsps
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
@@ -57,10 +57,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
+-- cmake
+require("custom.cmake").setup()
+
 -- For transparent background
 vim.cmd([[hi! Normal guibg=NONE ctermbg=NONE]])
 vim.cmd([[hi! NormalNC guibg=NONE ctermbg=NONE]])
--- Add more highlighting groups as needed
 
 -- Highlight for nvim-cmp
 -- Deprecated items (gray)
