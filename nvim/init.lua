@@ -33,6 +33,7 @@ vim.opt.undodir = vim.fn.expand('~/.config/nvim/undo')  -- Set undo directory
 -- keymaps
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>v", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>bk", vim.cmd.bw)
 vim.keymap.set('v', '<Leader>y', '"+y', { noremap = true, silent = true })
 -- Go to definition
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
@@ -57,8 +58,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
--- cmake
+-- Customs
 require("custom.cmake").setup()
+require("custom.shell").setup()
 
 -- For transparent background
 vim.cmd([[hi! Normal guibg=NONE ctermbg=NONE]])

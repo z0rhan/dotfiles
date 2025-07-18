@@ -1,6 +1,6 @@
 #bin/bash
 
-DOTFILES="$HOME/Dev/dotfiles/scripts"
+DOTFILES="$HOME/Dev/dotfiles"
 
 ln -sf $DOTFILES/nvim ~/.config/nvim
 ln -sf $DOTFILES/fastfetch ~/.config/fastfetch

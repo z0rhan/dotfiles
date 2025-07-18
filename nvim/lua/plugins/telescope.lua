@@ -41,6 +41,6 @@ return {
 		vim.keymap.set("n", "<leader>fs", builtin.live_grep, { desc = "Telescope live grep" })
 		vim.keymap.set("n", "<leader>fg", builtin.git_files, { desc = "Telescope find git files" })
 		vim.keymap.set("n", "<leader>of", builtin.oldfiles, { desc = "Telescope find old files" })
-		vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "Telescope find buffers" })
+		vim.keymap.set("n", "<leader>bb", builtin.buffers, { desc = "Telescope find buffers" })
 	end,
 }
