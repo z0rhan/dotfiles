@@ -40,10 +40,6 @@ function M.capture_output(cmd)
     })
 end
 
--- Not used currently, but defined to keep structure
-function M.run()
-end
-
 function M.setup()
     vim.api.nvim_create_user_command("R", function(opts)
         M.capture_output(opts.fargs)

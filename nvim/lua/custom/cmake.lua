@@ -1,5 +1,6 @@
 local M = {}
 
+-- Capture output
 function M.capture_output_async(cmd)
     vim.cmd("new")
     local buf = vim.api.nvim_get_current_buf()
@@ -48,23 +49,36 @@ function M.capture_output_async(cmd)
     })
 end
 
+-- Wrappers
 function M.run()
     M.capture_output_async("cmake -S. -Bbuild")
 end
-
 function M.build()
     M.capture_output_async("cmake --build build")
 end
-
 function M.build_clean()
     vim.fn.systemlist("rm -rf ./build")
     M.run()
 end
 
+-- Helper
+local function has_cmake_project()
+    return vim.fn.filereadable("CMakeLists.txt") == 1
+end
+
+-- API
 function M.setup()
-    vim.api.nvim_create_user_command("Cmake", M.run, {})
+    -- Enhanced command with validation
+    vim.api.nvim_create_user_command("Cmake",
+    function()
+        if not has_cmake_project() then
+            vim.notify("No CMakeLists.txt found in current directory", vim.log.levels.ERROR)
+            return
+        end
+        M.run()
+    end, {})
+    vim.api.nvim_create_user_command("CmakeClean", M.build_clean, {})
     vim.api.nvim_create_user_command("CmakeBuild", M.build, {})
-    vim.api.nvim_create_user_command("CmakeBuildClean", M.build_clean, {})
 end
 
 return M

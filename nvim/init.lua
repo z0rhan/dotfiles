@@ -61,6 +61,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 -- Customs
 require("custom.cmake").setup()
 require("custom.shell").setup()
+require("custom.new-file").setup()
 
 -- For transparent background
 vim.cmd([[hi! Normal guibg=NONE ctermbg=NONE]])
