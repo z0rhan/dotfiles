@@ -27,7 +27,7 @@ function M.setup()
         function(opts)
             M.create_file_and_dir(opts.args)
         end,
-        { 
+        {
             nargs = 1,
             complete = 'file'
         }
