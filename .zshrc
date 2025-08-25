@@ -22,7 +22,7 @@ alias cdd='cd "$(find . -type d | fzf)"'
 alias ff='fastfetch'
 alias nt='nvim +"term"'
 alias cppformat='~/.local/share/nvim/mason/bin/clang-format -style="{BasedOnStyle: LLVM, BreakBeforeBraces: Allman}" -dump-config > .clang-format'
-alias e='emacs -nw'
+alias e='emacsclient -a "" -nw'
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load

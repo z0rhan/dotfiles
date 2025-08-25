@@ -10,7 +10,7 @@ tmux split-window -h -p 30 -t $1:0
 tmux new-window -t $1: -n 1
 
 # Create new emacs-session inside the new window
-tmux send-keys -t $1:1 'e' C-m
+# tmux send-keys -t $1:1 'e' C-m
 
 # Attach to the session created
 tmux attach-session -t "$1":0.0

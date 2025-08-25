@@ -47,7 +47,9 @@ vim.keymap.set("n", "<leader>bk",
 
 vim.keymap.set("n", "<leader>db", vim.cmd.Alpha)
 vim.keymap.set('v', '<Leader>y', '"+y', { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>ot", require("custom.term").open_terminal_in_file_dir,
+vim.keymap.set("n", "<leader>ot", require("custom.term").open_terminal_in_root_dir,
+    { noremap = true, silent = true, desc = "Open new terminal buffer in file dir" })
+vim.keymap.set("n", "<leader>oT", require("custom.term").open_terminal_in_file_dir,
     { noremap = true, silent = true, desc = "Open new terminal buffer in file dir" })
 
 -- Go to definition
@@ -82,6 +84,11 @@ require("custom.new-file").setup()
 -- For transparent background
 vim.cmd([[hi! Normal guibg=NONE ctermbg=NONE]])
 vim.cmd([[hi! NormalNC guibg=NONE ctermbg=NONE]])
+
+-- For TODO
+vim.cmd [[
+  highlight Todo ctermfg=NONE ctermbg=NONE cterm=bold gui=bold guifg=NONE guibg=NONE
+]]
 
 -- Highlight for nvim-cmp
 -- Deprecated items (gray)
