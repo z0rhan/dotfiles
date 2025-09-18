@@ -19,29 +19,44 @@ return {
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-            local lspconfig = require("lspconfig")
-            lspconfig.lua_ls.setup({ capabilities = capabilities })
-            lspconfig.clangd.setup({ capabilities = capabilities })
-            lspconfig.cmake.setup({ capabilities = capabilities })
-            lspconfig.glsl_analyzer.setup({
+            -- Define/override configuration for servers via vim.lsp.config
+            vim.lsp.config("lua_ls", { capabilities = capabilities })
+
+            vim.lsp.config("clangd", { capabilities = capabilities, })
+            vim.lsp.config("cmake", { capabilities = capabilities, })
+            vim.lsp.config("glsl_analyzer", {
                 capabilities = capabilities,
                 filetypes = { "gdshader" },
             })
 
-            lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+            vim.lsp.config("rust_analyzer", { capabilities = capabilities, })
 
-            lspconfig.pylsp.setup({ capabilities = capabilities })
+            vim.lsp.config("pylsp", { capabilities = capabilities, })
 
-            lspconfig.html.setup({
+            vim.lsp.config("html", {
                 capabilities = capabilities,
-                filetypes = { "html", "htmldjango", "django-html" }
+                filetypes = { "html", "htmldjango", "django-html" },
             })
-            lspconfig.cssls.setup({ capabilities = capabilities })
-            lspconfig.ts_ls.setup({ capabilities = capabilities })
+            vim.lsp.config("cssls", { capabilities = capabilities, })
+            vim.lsp.config("ts_ls", { capabilities = capabilities, })
 
-            lspconfig.sqlls.setup({ capabilities = capabilities })
+            vim.lsp.config("sqlls", { capabilities = capabilities, })
 
-            lspconfig.hls.setup({ capabilities = capabilities })
+            vim.lsp.config("hls", { capabilities = capabilities, })
+
+            vim.lsp.enable({
+                "lua_ls",
+                "clangd",
+                "cmake",
+                "glsl_analyzer",
+                "rust_analyzer",
+                "pylsp",
+                "html",
+                "cssls",
+                "ts_ls",
+                "sqlls",
+                "hls",
+            })
         end,
     },
 }
