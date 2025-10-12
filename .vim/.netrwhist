@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/z0rhan/Dev/chip-8/src'
+let g:netrw_dirhist_3='/home/z0rhan/Dev/chip-8'
+let g:netrw_dirhist_2='/home/z0rhan/Dev/dotfiles/nvim'
+let g:netrw_dirhist_1='/home/z0rhan/Dev/dotfiles'
