@@ -1,3 +1,6 @@
 *.json
 undo/
 node_modules/
+.vim/plugged
+.vim/.netrwhist
+undodir/

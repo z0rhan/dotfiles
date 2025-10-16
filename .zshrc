@@ -3,7 +3,7 @@
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="$HOME/Dev/dotfiles/scripts:$PATH"
+export PATH="$HOME/dev/dotfiles/scripts:$PATH"
 export PATH="$HOME/usr/lib/qt6/bin:$PATH"
 export PATH="$HOME/.config/emacs/bin:$PATH"
 
@@ -127,3 +127,9 @@ export BAT_THEME="gruvbox-dark"
 eval "$(zoxide init zsh)"
 
 [ -f "/home/z0rhan/.ghcup/env" ] && . "/home/z0rhan/.ghcup/env" # ghcup-env
+
+# fnm
+eval "$(fnm env)"
+
+# Disable Ctrl-d
+# setopt IGNORE_EOF

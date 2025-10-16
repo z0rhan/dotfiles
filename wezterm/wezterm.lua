@@ -3,45 +3,31 @@ local wezterm = require 'wezterm'
 -- Create a local config table to keep settings organized
 local config = wezterm.config_builder()
 
+config.front_end = "WebGpu"
+
 -- Set font and font size
-config.font = wezterm.font("JetBrains Mono")
+config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 11.0
 
 -- Set window transparency
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.8
 
 -- Use Gruvbox Dark theme (uncomment if you want it)
--- config.color_scheme = 'Gruvbox dark, hard (base16)'
+config.color_scheme = 'Gruvbox dark, hard (base16)'
+
 config.colors = {
-  foreground = "#FFFFFF", -- white text
-  background = "#000000", -- black background
-
-  cursor_bg = "#FFFFFF",
-  cursor_fg = "#000000",
-  cursor_border = "#FFFFFF",
-
-  selection_bg = "#444444",
-  selection_fg = "#FFFFFF",
-
-  ansi = {
-    "#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF",
-    "#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF",
-  },
-  brights = {
-    "#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF",
-    "#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF",
-  },
+    background = "#000000",
 }
 
 -- Wayland disable
--- config.enable_wayland = false
+config.enable_wayland = false
 
 -- Optional: hide title bar decorations
 config.window_decorations = "NONE"
 
 -- Set the initial window size
 config.initial_rows = 40
-config.initial_cols = 160
+config.initial_cols = 180
 
 -- Add keybindings
 config.keys = {
@@ -61,4 +47,3 @@ config.scrollback_lines = 10000
 
 -- Return the config table
 return config
-
