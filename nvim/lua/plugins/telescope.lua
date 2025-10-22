@@ -21,6 +21,8 @@ return {
 					theme = "ivy", -- Set a theme for live_grep picker specifically
 				},
 				find_files = {
+                    -- hidden = "true",
+                    no_ignore = "true",
 					theme = "ivy", -- Set a dropdown theme for find_files
 				},
 				git_files = {
