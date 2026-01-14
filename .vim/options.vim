@@ -27,3 +27,10 @@ set timeoutlen=500
 
 " Lightline
 set laststatus=2
+
+" auto-close brackets
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>

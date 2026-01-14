@@ -66,6 +66,10 @@ return {
 				"sqlls",
 				"hls",
 			})
+			vim.keymap.set("n", "<leader>sh", function()
+				local enabled = vim.lsp.inlay_hint.is_enabled({ bufnr = 0 })
+				vim.lsp.inlay_hint.enable(not enabled, { bufnr = 0 })
+			end, { desc = "Toggle Inlay Hints" })
 		end,
 	},
 }

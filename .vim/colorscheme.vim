@@ -1,9 +1,5 @@
 set termguicolors
-
-let g:gruvbox_italic=1
-
+" Track current colorscheme
 set background=dark
 colorscheme gruvbox
-
-" Transparent background
-hi Normal guibg=NONE ctermbg=NONE
+hi Normal guibg=#000000 ctermbg=NONE

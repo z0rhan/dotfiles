@@ -4,8 +4,14 @@
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/dev/dotfiles/scripts:$PATH"
-export PATH="$HOME/usr/lib/qt6/bin:$PATH"
+export PATH="/usr/lib/qt6/bin:$PATH"
+export PATH="/usr/lib/qt6:$PATH"
 export PATH="$HOME/.config/emacs/bin:$PATH"
+
+# Cuda-related
+export CUDA_HOME=/opt/cuda
+export PATH=$CUDA_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -16,13 +22,14 @@ ZSH_THEME="robbyrussell"
 #aliases
 alias ll='ls -l'
 alias la='ls -a'
-alias vi='nvim'
-alias neof='file=$(fzf --preview "bat --color=always --line-range :50 {}") && [ -n "$file" ] && nvim "$file"'
-alias cdd='cd "$(find . -type d | fzf)"'
+alias vi='vim'
+alias nvi='nvim'
+alias vif='file=$(fzf --preview "bat --color=always --line-range :50 {}") && [ -n "$file" ] && vim "$file"'
+alias zz='z "$(find . -type d | fzf)"'
 alias ff='fastfetch'
 alias nt='nvim +"term"'
-alias cppformat='~/.local/share/nvim/mason/bin/clang-format -style="{BasedOnStyle: LLVM, BreakBeforeBraces: Allman}" -dump-config > .clang-format'
 alias e='emacsclient -a "" -nw'
+alias nvc='z ~/dev/dotfiles/nvim && nvim'
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -126,10 +133,23 @@ export BAT_THEME="gruvbox-dark"
 # zoxide
 eval "$(zoxide init zsh)"
 
-[ -f "/home/z0rhan/.ghcup/env" ] && . "/home/z0rhan/.ghcup/env" # ghcup-env
+[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env" # ghcup-env
 
 # fnm
 eval "$(fnm env)"
 
 # Disable Ctrl-d
 # setopt IGNORE_EOF
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'micromamba shell init' !!
+export MAMBA_EXE='$HOME/.local/bin/micromamba';
+export MAMBA_ROOT_PREFIX='$HOME/micromamba';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias micromamba="$MAMBA_EXE"  # Fallback on help from micromamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
