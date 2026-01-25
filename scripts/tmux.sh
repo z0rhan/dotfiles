@@ -4,7 +4,7 @@
 tmux new-session -d -s $1
 
 # Split vertically
-tmux split-window -h -p 10 -t $1:0
+tmux split-window -v -p 10 -t $1:0
 
 # Create a new window
 tmux new-window -t $1: -n 1
