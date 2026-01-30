@@ -4,3 +4,5 @@ source ~/.vim/plugins.vim
 source ~/.vim/colorscheme.vim
 source ~/.vim/undo-tree.vim
 source ~/.vim/lsp.vim
+source ~/.vim/packadd.vim
+source ~/.vim/custom.vim

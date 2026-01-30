@@ -1,11 +1,26 @@
 " Completion shit
-set completeopt=menuone,noinsert,noselect
+set completeopt=menuone,noinsert,
 highlight Pmenu ctermbg=NONE guibg=#1e1e1e
 highlight PmenuSel ctermbg=NONE guibg=#333333
 
 set shortmess+=c
 
-let g:asyncomplete_auto_popup = 0
+let g:asyncomplete_auto_popup = 1
+
+" C-n to trigger it
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1] =~ '\s'
+" endfunction
+" 
+" inoremap <silent><expr> <C-n>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<C-n>" :
+"       \ asyncomplete#force_refresh()
+" 
+" inoremap <silent><expr> <C-p>
+"       \ pumvisible() ? "\<C-p>" : "\<C-p>"
+
 let g:asyncomplete_auto_completeopt = 0
 
 " Lsp shit
@@ -37,11 +52,11 @@ if executable('rust-analyzer')
         \ })
 endif
 
-if executable('/home/z0rhan/.local/share/nvim/mason/bin/pylsp')
+if executable('/home/z0rhan/.local/share/nvim/mason/packages/python-lsp-server/venv/bin/pylsp')
     " pip install python-lsp-server
     au User lsp_setup call lsp#register_server({
         \ 'name': 'pylsp',
-        \ 'cmd': {server_info->['/home/z0rhan/.local/share/nvim/mason/bin/pylsp']},
+        \ 'cmd': {server_info->['/home/z0rhan/.local/share/nvim/mason/packages/python-lsp-server/venv/bin/pylsp']},
         \ 'allowlist': ['python'],
         \ })
 endif

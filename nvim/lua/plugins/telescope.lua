@@ -22,7 +22,7 @@ return {
 				},
 				find_files = {
                     -- hidden = "true",
-                    no_ignore = "true",
+                    -- no_ignore = "true",
 					theme = "ivy", -- Set a dropdown theme for find_files
 				},
 				git_files = {

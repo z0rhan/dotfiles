@@ -21,7 +21,7 @@ vim.cmd("set expandtab")
 vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
-vim.cmd("syntax on")
+-- vim.cmd("syntax on")
 
 -- Vertical mark
 vim.opt.colorcolumn = "80,100"
@@ -45,7 +45,6 @@ vim.keymap.set("n", "<leader>bk",
     end,
     { noremap = true, silent = true, desc = "Close buffer (force for terminal)" })
 
-vim.keymap.set("n", "<leader>db", vim.cmd.Alpha)
 vim.keymap.set('v', '<Leader>y', '"+y', { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>ot", require("custom.term").open_terminal_in_root_dir,
     { noremap = true, silent = true, desc = "Open new terminal buffer in file dir" })
@@ -64,8 +63,9 @@ vim.cmd([[ tnoremap <C-[> <C-\><C-n>]])
 require("config.lazy")
 
 -- colorscheme
-vim.o.background = "dark" -- or "light" for light mode
+-- vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
+vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
 
 -- disable highlighting from lsps
 vim.api.nvim_create_autocmd("LspAttach", {
