@@ -31,6 +31,16 @@ vim.pack.add({
     "https://github.com/saadparwaiz1/cmp_luasnip",
     "https://github.com/rafamadriz/friendly-snippets",
     "https://github.com/onsails/lspkind.nvim",
+
+    -- Nvim-autopairs
+    "https://github.com/windwp/nvim-autopairs",
+
+    -- Typast-preview
+    "https://github.com/chomosuke/typst-preview.nvim",
+
+    -- Oil
+    "https://github.com/stevearc/oil.nvim",
+    "https://github.com/nvim-mini/mini.icons"
 })
 
 -- config
@@ -41,10 +51,12 @@ require("config.gruvbox")
 require("config.cmp")
 require("config.lsp")
 require("config.lsp_signature")
+require("config.nvim-autopairs")
+require("config.typst-preview")
+require("config.oil")
+
+-- customs
+require("custom.file").setup()
 
 -- Packages
 vim.cmd("packadd nvim.undotree")
-
--- For transparent background
-vim.cmd([[hi! Normal guibg=NONE ctermbg=NONE]])
-vim.cmd([[hi! NormalNC guibg=NONE ctermbg=NONE]])
