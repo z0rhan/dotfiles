@@ -1,4 +1,7 @@
+au BufRead,BufNewFile *.inl set filetype=cpp
+au BufRead,BufNewFile *.hpp set filetype=cpp
 syntax on
+filetype plugin indent on
 
 set guicursor&  " Reset to default cursor
 
@@ -8,7 +11,6 @@ set number
 set relativenumber
 set scrolloff=8
 
-filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4

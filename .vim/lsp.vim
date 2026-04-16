@@ -7,6 +7,9 @@ set shortmess+=c
 
 let g:asyncomplete_auto_popup = 1
 
+" Enter: never accept completion, only newline (use Tab/C-n to accept)
+inoremap <expr> <cr> pumvisible() ? "\<C-e>\<cr>" : "\<cr>"
+
 " C-n to trigger it
 " function! s:check_back_space() abort
 "   let col = col('.') - 1

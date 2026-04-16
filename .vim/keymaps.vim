@@ -20,7 +20,6 @@ endfunction
 " copy to clipboard
 vnoremap <leader>y "+y
 vnoremap <C-x> "+d
-vnoremap <C-x> "+d
 
 " tab-related
 nnoremap <C-t> :tabnew<CR>

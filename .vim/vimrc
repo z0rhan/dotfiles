@@ -1,3 +1,6 @@
+" Ensure our syntax files (e.g. syntax/cpp.vim) are used first
+" set rtp^=~/.vim
+
 source ~/.vim/options.vim
 source ~/.vim/keymaps.vim
 source ~/.vim/plugins.vim

@@ -3,4 +3,7 @@ undo/
 node_modules/
 .vim/plugged
 .vim/.netrwhist
+.vim/syntax
 undodir/
+*bak*
+images/

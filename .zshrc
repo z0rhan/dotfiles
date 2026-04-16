@@ -1,8 +1,20 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
+# Change default cd directory
+cd() {
+  if [ -z "$1" ]; then
+    builtin cd ~/dev
+  else
+    builtin cd "$@"
+  fi
+}   
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export TERM=xterm-256color
+
+# Useful paths
 export PATH="$HOME/dev/dotfiles/scripts:$PATH"
 export PATH="/usr/lib/qt6/bin:$PATH"
 export PATH="/usr/lib/qt6:$PATH"
@@ -22,14 +34,31 @@ ZSH_THEME="robbyrussell"
 #aliases
 alias ll='ls -l'
 alias la='ls -a'
-alias vi='vim'
-alias nvi='nvim'
+alias vim='vim'
+alias vi='nvim'
 alias vif='file=$(fzf --preview "bat --color=always --line-range :50 {}") && [ -n "$file" ] && vim "$file"'
 alias zz='z "$(find . -type d | fzf)"'
 alias ff='fastfetch'
 alias nt='nvim +"term"'
 alias e='emacsclient -a "" -nw'
 alias nvc='z ~/dev/dotfiles/nvim && nvim'
+
+# for fuzzy finding man-pages
+fman() {
+    local selection cmd section
+
+    selection=$(man -k . | fzf \
+        --preview 'man {1} | col -b' \
+        --preview-window=right:60%)
+
+    [ -z "$selection" ] && return
+
+    cmd=${selection%% *}
+    section=$(sed -n 's/.*(\([0-9][^)]*\)).*/\1/p' <<< "$selection")
+
+    nvim +"silent Man $section $cmd" +'only'
+}
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load

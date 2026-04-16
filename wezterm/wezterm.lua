@@ -7,7 +7,7 @@ config.front_end = "WebGpu"
 
 -- Set font and font size
 config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 11.0
+config.font_size = 10.0
 
 -- Set window transparency
 config.window_background_opacity = 0.8
@@ -44,6 +44,10 @@ config.hide_tab_bar_if_only_one_tab = true
 
 -- Longer scrollback
 config.scrollback_lines = 10000
+
+-- Higher FPS
+config.max_fps = 144
+config.animation_fps = 144
 
 -- Return the config table
 return config
