@@ -40,12 +40,15 @@ vim.pack.add({
 
     -- Oil
     "https://github.com/stevearc/oil.nvim",
-    "https://github.com/nvim-mini/mini.icons"
+    "https://github.com/nvim-mini/mini.icons",
+
+    -- Nvim-treesitter
+    "https://github.com/nvim-treesitter/nvim-treesitter.git"
 })
 
 -- config
-require("config.options")
 require("config.keymaps")
+require("config.treesitter")
 require("config.telescope")
 require("config.gruvbox")
 require("config.cmp")
@@ -54,6 +57,7 @@ require("config.lsp_signature")
 require("config.nvim-autopairs")
 require("config.typst-preview")
 require("config.oil")
+require("config.options")
 
 -- customs
 require("custom.file").setup()
