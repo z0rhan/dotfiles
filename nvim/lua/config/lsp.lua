@@ -26,14 +26,12 @@ vim.lsp.config("rust_analyzer", {
     },
 })
 
-vim.lsp.config("asm_lsp", { capabilities = capabilities })
 vim.lsp.config("pylsp", { capabilities = capabilities })
 
 vim.lsp.config("html", {
     capabilities = capabilities,
     filetypes = { "html", "htmldjango", "django-html" },
 })
-vim.lsp.config("cssls", { capabilities = capabilities })
 vim.lsp.config("ts_ls", { capabilities = capabilities })
 
 vim.lsp.config("sqlls", { capabilities = capabilities })
@@ -46,10 +44,8 @@ vim.lsp.enable({
     "cmake",
     "glsl_analyzer",
     "rust_analyzer",
-    "asm_lsp",
     "pylsp",
     "html",
-    "cssls",
     "ts_ls",
     "sqlls",
     "hls",

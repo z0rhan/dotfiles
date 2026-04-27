@@ -1,6 +1,6 @@
 -- keymaps
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>t", vim.cmd.terminal)
+vim.keymap.set("n", "<leader>tt", vim.cmd.terminal)
 vim.keymap.set('v', '<Leader>y', '"+y', { noremap = true })
 vim.keymap.set("n", "<leader>bn", vim.cmd.bnext)
 vim.keymap.set("n", "<leader>bp", vim.cmd.bprev)
@@ -23,7 +23,7 @@ vim.keymap.set("n", "<leader>tv", require("custom.term").open_terminal_vertical,
 -- Go to definition
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'Go to declaration' })
-vim.keymap.set('n', 'gdi', vim.lsp.buf.implementation, { desc = 'Go to implementation' })
+vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = 'Go to implementation' })
 
 -- Remap Ctrl+\ Ctrl+n to Ctrl+[ in terminal mode
 vim.cmd([[ tnoremap <C-[> <C-\><C-n>]])
@@ -48,3 +48,12 @@ vim.keymap.set("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<cr>", { silent = true }
 
 -- Oil
 vim.keymap.set("n", "<leader>v", '<cmd>Oil<cr>', { desc = "Open oil in preview mode"})
+
+-- Lsp hover
+vim.keymap.set("n", "K", function()
+    vim.lsp.buf.hover({
+        border = "rounded",
+        max_width = 80,
+        max_height = 20,
+    })
+end, { desc = "LSP Hover" })

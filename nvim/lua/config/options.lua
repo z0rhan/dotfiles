@@ -23,3 +23,19 @@ vim.opt.colorcolumn = "80,100"
 -- Enable persistent undo
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand('~/.config/nvim/undo') -- Set undo directory
+
+-- Diagnostics
+vim.o.updatetime = 750
+vim.api.nvim_create_autocmd("CursorHold", {
+    callback = function()
+        vim.diagnostic.open_float(nil, {
+            focus = false,
+            scope = "cursor",
+            border = "rounded",
+        })
+    end,
+})
+
+-- For transparent background
+vim.cmd([[hi! Normal guibg=NONE ctermbg=NONE]])
+vim.cmd([[hi! NormalNC guibg=NONE ctermbg=NONE]])
