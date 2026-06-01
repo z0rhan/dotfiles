@@ -1,5 +1,6 @@
 -- keymaps
 vim.g.mapleader = " "
+vim.keymap.set("n", "<leader>up", "<cmd>lua vim.pack.update()<CR>", { desc = "Update plugins" })
 vim.keymap.set("n", "<leader>tt", vim.cmd.terminal)
 vim.keymap.set('v', '<Leader>y', '"+y', { noremap = true })
 vim.keymap.set("n", "<leader>bn", vim.cmd.bnext)
@@ -34,6 +35,7 @@ vim.keymap.set("n", "<leader>ut", vim.cmd.Undotree, { desc = "Toggle undotree" }
 -- Keymaps for Telescope actions
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
+vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Telescope find recent files" })
 vim.keymap.set("n", "<leader>fs", builtin.live_grep, { desc = "Telescope live grep" })
 vim.keymap.set("n", "<leader>fg", builtin.git_files, { desc = "Telescope find git files" })
 vim.keymap.set("n", "<leader>of", builtin.oldfiles, { desc = "Telescope find old files" })
@@ -47,7 +49,8 @@ vim.keymap.set("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { silent = true })
 vim.keymap.set("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<cr>", { silent = true })
 
 -- Oil
-vim.keymap.set("n", "<leader>v", '<cmd>Oil<cr>', { desc = "Open oil in preview mode"})
+vim.keymap.set("n", "<leader>v", '<cmd>Oil<cr>', { desc = "Open oil"})
+-- vim.keymap.set("n", "-", require("oil").toggle_float , { desc = "Open oil in float and preview mode"})
 
 -- Lsp hover
 vim.keymap.set("n", "K", function()

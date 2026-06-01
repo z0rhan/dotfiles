@@ -39,3 +39,10 @@ vim.api.nvim_create_autocmd("CursorHold", {
 -- For transparent background
 vim.cmd([[hi! Normal guibg=NONE ctermbg=NONE]])
 vim.cmd([[hi! NormalNC guibg=NONE ctermbg=NONE]])
+vim.cmd([[hi! SignColumn guibg=NONE ctermbg=NONE]])
+vim.cmd([[hi! EndOfBuffer guibg=NONE ctermbg=NONE]])
+vim.cmd([[hi! LineNr guibg=NONE ctermbg=NONE]])
+vim.cmd([[hi! CursorLineNr guibg=NONE ctermbg=NONE]])
+vim.cmd([[hi! FoldColumn guibg=NONE ctermbg=NONE]])
+vim.cmd([[hi! NormalFloat guibg=NONE ctermbg=NONE]])
+vim.cmd([[hi! FloatBorder guibg=NONE ctermbg=NONE]])

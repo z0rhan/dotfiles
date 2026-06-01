@@ -2,7 +2,6 @@
 vim.pack.add({
     -- Gruvbox
     "https://github.com/ellisonleao/gruvbox.nvim",
-
     -- Telescope
     "https://github.com/nvim-telescope/telescope.nvim",
     -- Deps
@@ -43,7 +42,10 @@ vim.pack.add({
     "https://github.com/nvim-mini/mini.icons",
 
     -- Nvim-treesitter
-    "https://github.com/nvim-treesitter/nvim-treesitter.git"
+    "https://github.com/nvim-treesitter/nvim-treesitter.git",
+
+    -- Alph-nvim
+    "https://github.com/goolord/alpha-nvim"
 })
 
 -- config
@@ -58,6 +60,7 @@ require("config.nvim-autopairs")
 require("config.typst-preview")
 require("config.oil")
 require("config.options")
+require("config.alpha")
 
 -- customs
 require("custom.file").setup()
