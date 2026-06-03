@@ -2,18 +2,16 @@ require("mason").setup()
 
 require("mason-lspconfig").setup({
     auto_install = false, -- keep your preference
+    ensure_installed = {
+        rust_analyzer,
+        pylsp
+    }
 })
 
--- Your server configs (Neovim-native)
-vim.lsp.config("lua_ls", { capabilities = capabilities })
-
-vim.lsp.config("clangd", { capabilities = capabilities })
-vim.lsp.config("cmake", { capabilities = capabilities })
-
-vim.lsp.config("glsl_analyzer", {
-    capabilities = capabilities,
-    filetypes = { "gdshader" },
-})
+-- vim.lsp.config("lua_ls", { capabilities = capabilities })
+-- 
+-- vim.lsp.config("clangd", { capabilities = capabilities })
+-- vim.lsp.config("cmake", { capabilities = capabilities })
 
 vim.lsp.config("rust_analyzer", {
     capabilities = capabilities,
@@ -28,28 +26,12 @@ vim.lsp.config("rust_analyzer", {
 
 vim.lsp.config("pylsp", { capabilities = capabilities })
 
-vim.lsp.config("html", {
-    capabilities = capabilities,
-    filetypes = { "html", "htmldjango", "django-html" },
-})
-vim.lsp.config("ts_ls", { capabilities = capabilities })
-
-vim.lsp.config("sqlls", { capabilities = capabilities })
-vim.lsp.config("hls", { capabilities = capabilities })
-vim.lsp.config("tinymist", { capabilities = capabilities })
-
 vim.lsp.enable({
-    "lua_ls",
-    "clangd",
-    "cmake",
-    "glsl_analyzer",
     "rust_analyzer",
     "pylsp",
-    "html",
-    "ts_ls",
-    "sqlls",
-    "hls",
-    "tinymist",
+    -- "lua_ls",
+    -- "clangd",
+    -- "cmake",
 })
 
 vim.keymap.set("n", "<leader>sh", function()

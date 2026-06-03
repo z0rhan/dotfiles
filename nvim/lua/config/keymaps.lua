@@ -25,6 +25,7 @@ vim.keymap.set("n", "<leader>tv", require("custom.term").open_terminal_vertical,
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'Go to declaration' })
 vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = 'Go to implementation' })
+vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = 'Go to references' })
 
 -- Remap Ctrl+\ Ctrl+n to Ctrl+[ in terminal mode
 vim.cmd([[ tnoremap <C-[> <C-\><C-n>]])

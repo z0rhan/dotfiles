@@ -34,9 +34,6 @@ vim.pack.add({
     -- Nvim-autopairs
     "https://github.com/windwp/nvim-autopairs",
 
-    -- Typast-preview
-    "https://github.com/chomosuke/typst-preview.nvim",
-
     -- Oil
     "https://github.com/stevearc/oil.nvim",
     "https://github.com/nvim-mini/mini.icons",
@@ -57,7 +54,6 @@ require("config.cmp")
 require("config.lsp")
 require("config.lsp_signature")
 require("config.nvim-autopairs")
-require("config.typst-preview")
 require("config.oil")
 require("config.options")
 require("config.alpha")
