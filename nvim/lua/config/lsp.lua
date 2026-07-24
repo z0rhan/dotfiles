@@ -3,8 +3,8 @@ require("mason").setup()
 require("mason-lspconfig").setup({
     auto_install = false, -- keep your preference
     ensure_installed = {
-        rust_analyzer,
-        pylsp
+        "rust_analyzer",
+        "pylsp"
     }
 })
 
