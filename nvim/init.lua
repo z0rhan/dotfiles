@@ -42,7 +42,10 @@ vim.pack.add({
     "https://github.com/nvim-treesitter/nvim-treesitter.git",
 
     -- Alph-nvim
-    "https://github.com/goolord/alpha-nvim"
+    "https://github.com/goolord/alpha-nvim",
+
+    -- Copilot
+    "https://github.com/github/copilot.vim"
 })
 
 -- config
