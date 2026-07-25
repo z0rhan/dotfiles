@@ -2,6 +2,7 @@
 vim.pack.add({
     -- Gruvbox
     "https://github.com/ellisonleao/gruvbox.nvim",
+
     -- Telescope
     "https://github.com/nvim-telescope/telescope.nvim",
     -- Deps
@@ -45,7 +46,10 @@ vim.pack.add({
     "https://github.com/nvim-treesitter/nvim-treesitter.git",
 
     -- Alph-nvim
-    "https://github.com/goolord/alpha-nvim"
+    "https://github.com/goolord/alpha-nvim",
+
+    -- Copilot
+    "https://github.com/github/copilot.vim"
 })
 
 -- config

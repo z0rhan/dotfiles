@@ -60,3 +60,21 @@ vim.keymap.set("n", "K", function()
         max_height = 20,
     })
 end, { desc = "LSP Hover" })
+
+-- Copilot
+vim.keymap.set("i", "<C-O>", 'copilot#Accept("\\<CR>")', {
+    expr = true,
+    replace_keycodes = false,
+})
+vim.g.copilot_no_tab_map = true
+
+-- Inlay hints
+vim.keymap.set("n", "<leader>sh", function()
+    local enabled = vim.lsp.inlay_hint.is_enabled({ bufnr = 0 })
+    vim.lsp.inlay_hint.enable(not enabled, { bufnr = 0 })
+end, { desc = "Toggle Inlay Hints" })
+
+-- Formatting
+vim.keymap.set("n", "<leader>fd", function()
+    vim.lsp.buf.format({ async = true })
+end, { desc = "Format document" })

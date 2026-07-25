@@ -17,16 +17,19 @@ vim.lsp.config("glsl_analyzer", {
 
 vim.lsp.config("rust_analyzer", {
     capabilities = capabilities,
+    -- cmd = { "/home/z0rhan/.cargo/bin/rust-analyzer" },
     settings = {
         ["rust-analyzer"] = {
             rustfmt = {
-                overrideCommand = { "/home/z0rhan/.cargo/bin/rustfmt" },
+                overrideCommand = { "/home/z0rhan/.cargo/bin/rustfmt" , "--edition", "2018" },
             },
         },
     },
 })
 
-vim.lsp.config("pylsp", { capabilities = capabilities })
+vim.lsp.config("pylsp", {
+    capabilities = capabilities
+})
 
 vim.lsp.config("html", {
     capabilities = capabilities,
@@ -51,8 +54,3 @@ vim.lsp.enable({
     "hls",
     "tinymist",
 })
-
-vim.keymap.set("n", "<leader>sh", function()
-    local enabled = vim.lsp.inlay_hint.is_enabled({ bufnr = 0 })
-    vim.lsp.inlay_hint.enable(not enabled, { bufnr = 0 })
-end, { desc = "Toggle Inlay Hints" })
