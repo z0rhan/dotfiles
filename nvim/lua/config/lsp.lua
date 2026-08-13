@@ -13,16 +13,7 @@ require("mason-lspconfig").setup({
 -- vim.lsp.config("clangd", { capabilities = capabilities })
 -- vim.lsp.config("cmake", { capabilities = capabilities })
 
-vim.lsp.config("rust_analyzer", {
-    capabilities = capabilities,
-    settings = {
-        ["rust-analyzer"] = {
-            rustfmt = {
-                overrideCommand = { "/home/z0rhan/.cargo/bin/rustfmt" },
-            },
-        },
-    },
-})
+vim.lsp.config("rust_analyzer", { capabilities = capabilities })
 
 vim.lsp.config("pylsp", { capabilities = capabilities })
 
